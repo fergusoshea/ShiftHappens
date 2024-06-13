@@ -1,6 +1,7 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -42,6 +43,13 @@ class TranslatorTest {
         assertEquals(
             "!$%^&*(){}:@~<>.,';][",
             translator.translateString("!$%^&*(){}:@~<>.,';][", 3));
+    }
+
+    @Test
+    void testPound() {
+        assertNotEquals(
+            "£",
+            translator.translateString("£", 0));
     }
 
     @Test
